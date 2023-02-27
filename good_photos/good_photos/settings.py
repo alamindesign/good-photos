@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    'photosApp'
+    'photosApp',
 ]
 
 MIDDLEWARE = [
@@ -56,9 +56,7 @@ ROOT_URLCONF = "good_photos.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [
-            os.path.join(BASE_DIR,'templates')
-        ],
+        'DIRS': [os.path.join(BASE_DIR,'templates')],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -80,7 +78,7 @@ WSGI_APPLICATION = "good_photos.wsgi.application"
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": str(os.path.join(BASE_DIR / "db.sqlite3")),
+        "NAME": str(os.path.join(BASE_DIR,"db.sqlite3")),
     }
 }
 
@@ -125,6 +123,10 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR,'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
+
+MEDIA_URL = '/image/download/'
+MEDIA_ROOT = BASE_DIR
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field
 

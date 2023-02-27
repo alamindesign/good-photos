@@ -15,7 +15,8 @@ class Image(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
     description = models.CharField(max_length=500)
     image=models.ImageField(upload_to='uploads/images/')
-
+    def __str__(self):
+        return self.img_name
 class User(models.Model):
     username = models.CharField(max_length=40)
     email = models.EmailField()
